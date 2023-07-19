@@ -18,7 +18,7 @@
                     <a class="nav-link" href="/campgrounds">Campgrounds</a>
                     <% if (!currentUser) { %>
                         <a class="nav-link" href="/login">Login</a>
-                        <a class="nav-link" href="/register">New Camper</a>
+                        <a class="nav-link" href="/register">Register</a>
                     <% } else { %>
                         <a class="nav-link" href="/logout">Logout</a>
                     <% } %>
@@ -28,7 +28,10 @@
         <main class="px-3">
             <h1>YelpCamp</h1>
             <p class="lead">Welcome to YelpCamp! <br>Jump in and explore our many campground listings. <br>Feel free to share some of your own and comment on others!</p>
-            <a href="/campgrounds" class="btn btn-lg btn-secondary fw-bold bg-white">View Campgrounds</a>
+            <div class="mb-5">
+                <a href="/campgrounds" class="btn btn-lg btn-secondary fw-bold bg-white">View Campgrounds</a>
+            </div>
+            <p class="bg-warning lead">This is a portfolio website. Explore additional functionality - adding, editing, deleting campsites and adding reviews - by registering with simple username and password (no password rules) and dummy email.</p>
         </main>
         <footer class="mt-auto text-white-50">
             <p>&copy; 2023 Brent Livesay</p>

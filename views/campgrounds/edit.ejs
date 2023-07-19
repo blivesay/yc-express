@@ -30,11 +30,13 @@
             </div>
             <div class="mb-3">
                 <% campground.images.forEach(function(img, index) { %>
+                <div class="mb-3">
                 <img class="img-thumbnail" src="<%= img.thumbnail %>" alt="">
                 <div class="form-check-inline">
                     <input type="checkbox" name="deleteImages[]" id="image-<%= index %>" value="<%= img.filename %>" >
                 </div>
                 <label for="image-<%= index %>">Delete Image</label>
+            </div>
                 <% }) %> 
             </div>
                 <div class="mb-3">

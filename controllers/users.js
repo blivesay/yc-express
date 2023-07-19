@@ -20,7 +20,7 @@ module.exports.register=async (req, res) => {
             if(err) {
                 return next(err)
             }
-            req.flash('success', 'Welcome to Yelp Camp')
+            req.flash('success', `Welcome to Yelp Camp, ${req.user.username}`)
             res.redirect('/campgrounds')
         })
         
@@ -35,7 +35,7 @@ module.exports.renderLogin=(req, res) => {
 }
 
 module.exports.login=(req, res) => {
-    req.flash('success', 'Welcome to Yelp Camp');
+    req.flash('success', `Welcome to Yelp Camp, ${req.user.username}`);
     const redirectUrl = res.locals.returnTo || '/campgrounds';
     res.redirect(redirectUrl)
 }

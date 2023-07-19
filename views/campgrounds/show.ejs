@@ -12,7 +12,7 @@
                 <div class="carousel-inner">
                     <% campground.images.forEach((img, index) => { %>
                         <div class="carousel-item <%= index === 0 ? 'active' : ''%>">
-                            <img src="<%= img.url %>" class="d-block w-100" alt="" crossorigin="anonymous">
+                            <img src="<%= img.thumbnailShow %>" class="d-block w-100" alt="" crossorigin="anonymous">
                         </div>
                     <% }) %>
                 </div>

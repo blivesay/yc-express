@@ -13,9 +13,9 @@
                 <div class="col-lg-4 col-md-6">
                     <a href="/campgrounds/<%= campground._id %>">
                     <% if (campground.images.length) { %>
-                        <img class="img-fluid" src="<%= campground.images[0].url %>" alt="" crossorigin="anonymous">
+                        <img class="img-fluid" src="<%= campground.images[0].thumbnailIndex %>" alt="" crossorigin="anonymous">
                     <% } else { %>
-                        <img crossorigin="anonymous" class="img-fluid" src="https://res.cloudinary.com/dfp75qktr/image/upload/v1688587140/YelpCamp/dmbiufyr475ctkrsp0vo.jpg" alt="Default Image">
+                        <img crossorigin="anonymous" class="img-fluid" src="https://res.cloudinary.com/dfp75qktr/image/upload/w_600/v1688587140/YelpCamp/dmbiufyr475ctkrsp0vo.jpg" alt="Default Image">
                         <% } %>
                     </a>
                 </div>

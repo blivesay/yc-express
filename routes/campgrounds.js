@@ -5,7 +5,7 @@ const Campground = require('../models/campground');
 const {isLoggedIn, isAuthor, validateCampground} = require('../middleware');
 const multer  = require('multer')
 const {storage} = require('../cloudinary');
-const upload = multer({ storage })
+const upload = multer({ storage, limits: {files : 2} });
 const campgrounds = require ('../controllers/campgrounds')
 
 
