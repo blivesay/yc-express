@@ -25,9 +25,9 @@ const MongoStore = require('connect-mongo');
 const campgroundRoutes = require('./routes/campgrounds')
 const reviewRoutes = require('./routes/reviews')
 const userRoutes = require('./routes/users')
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/yelp-camp';
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -49,10 +49,12 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 // line above replaced this: app.use(express.static('public'));
 
+const secret = process.env.SECRET || 'secretwordX';
+
 const store = MongoStore.create({ 
-    mongoUrl: 'mongodb://127.0.0.1:27017/yelp-camp',
+    mongoUrl: dbUrl,
     crypto: {
-        secret: 'secretwordX'
+        secret
       },
     touchAfter: 24 * 3600 // time period in seconds
     })
@@ -63,7 +65,7 @@ store.on("error", function(e){
 
 const sessionConfig = {
     name: 'yc_user',
-    secret: 'secretwordX',
+    secret,
     resave: false,
     saveUninitialized: false,
     cookie: {
